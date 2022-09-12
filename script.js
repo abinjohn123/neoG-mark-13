@@ -4,6 +4,13 @@ const form = document.getElementById('date-form');
 const dateEl = document.getElementById('form-date-input');
 const outputEl = document.querySelector('.output-confirmation');
 const nextPalEl = document.querySelector('.output-next-palindrome');
+const workingGIFEL = document.querySelector('.img-container');
+
+function toggleAnimation() {
+  outputEl.classList.toggle('hidden');
+  nextPalEl.classList.toggle('hidden');
+  workingGIFEL.classList.toggle('hidden');
+}
 
 function isPalindrome(dateString) {
   return dateString === dateString.split('').reverse().join('');
@@ -62,6 +69,9 @@ function formHandler(e) {
   e.preventDefault();
   const dateInput = new Date(dateEl.value);
   const { date, month, year } = splitDate(dateInput);
+
+  toggleAnimation();
+  setTimeout(toggleAnimation, 3000);
 
   if (isPalindrome(date + month + year)) return outputResult(true);
 

@@ -86,7 +86,7 @@ input {
   background-color: var(--primary-light);
   border: 2px solid var(--primary-dark);
 
-  height: 10rem;
+  height: 15rem;
   border-radius: 3px;
   padding: 2rem;
 
@@ -98,4 +98,12 @@ input {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+img {
+  width: 10rem;
+}
+
+.hidden {
+  display: none;
 }
