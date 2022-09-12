@@ -30,7 +30,7 @@ function outputResult(stat) {
 function outputNextPalResult(type, dateObj, days) {
   const { date, month, year } = splitDate(dateObj);
   const dateString = [date, month, year].join('-');
-  const message = `The nearest palindrome date is ${dateString}. You were ${type} by ${days} ${
+  const message = `The nearest palindrome date is ${dateString}\n You were ${type} by ${days} ${
     days > 1 ? 'days' : 'day'
   } `;
   nextPalEl.innerText = message;
