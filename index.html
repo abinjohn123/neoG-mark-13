@@ -10,6 +10,7 @@
   <body>
     <div class="container">
       <h1>Palindrome Birthday</h1>
+      <small>Date is taken and validated in DD/MM/YYYY format</small>
       <form id="date-form">
         <div class="form-row">
           <label for="date">Enter your birthdate</label>
@@ -19,7 +20,10 @@
           <button class="btn" type="submit" id="btn-submit">Check!</button>
         </div>
       </form>
-      <p class="output"></p>
+      <div class="output">
+        <p class="output-confirmation"></p>
+        <p class="output-next-palindrome"></p>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
