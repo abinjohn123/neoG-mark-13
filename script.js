@@ -34,7 +34,11 @@ function outputResult(stat) {
     : 'No, your birthday is not a palindrome!';
 }
 
-function outputNextPalResult(type, dateObj, days) {
+function outputNextPalResult(type, dateObj, days = 0) {
+  if (days === 0) {
+    nextPalEl.innerText = "Isn't that awesome?";
+    return;
+  }
   const { date, month, year } = splitDate(dateObj);
   const dateString = [date, month, year].join('-');
   const message = `The nearest palindrome date is ${dateString}\n You were ${type} by ${days} ${
@@ -73,7 +77,11 @@ function formHandler(e) {
   toggleAnimation();
   setTimeout(toggleAnimation, 3000);
 
-  if (isPalindrome(date + month + year)) return outputResult(true);
+  if (isPalindrome(date + month + year)) {
+    outputResult(true);
+    outputNextPalResult();
+    return;
+  }
 
   const [traverseType, nearestPalindrome, noOfDays] =
     nearbyPalindrome(dateInput);
